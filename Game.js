@@ -29,23 +29,23 @@ var playerIndex = 0;
 
 
 
-function download(filename, text) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
 
-  element.style.display = 'none';
-  document.body.appendChild(element);
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
 
-  element.click();
+    textFile = window.URL.createObjectURL(data);
 
-  document.body.removeChild(element);
-}
-
+    // returns a URL you can use as a href
+    return textFile;
+  };
 
 function intialize(){    
-		// Start file download.
-    download("helloWarudo.txt","This is the content of my file :)");
     gameCanvas = document.getElementById("GraphicsBox");       
     gameUI = document.getElementById("UIBox");   
     gameMouseEventHandler = document.getElementById("MouseEventHandler");
