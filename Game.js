@@ -182,7 +182,7 @@ function loadLevel(image){
            if(!(pixel[0]==255 && pixel[1]==0 && pixel[2]==0)){
                if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
                    playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );  
-				   console.log(pixel);
+				   console.log("RGB :"+pixel[0]+" "+pixel[1]+" "+pixel[2]+" ");
                }
 			   else if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){ //somehow this doesn't show up at mozilla. 
 			   //rather the pixel[1]==255 is always seen as false.
