@@ -180,10 +180,11 @@ function loadLevel(image){
            //pixel[2] -> blue
            //pixel[3] -> alpha        
            if(!(pixel[0]==255 && pixel[1]==0 && pixel[2]==0)){
-               if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
+			   if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){
+                   gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
+               else if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
                    playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );                   
-               }else if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){
-                  // gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
+               }
 				   
                //}else if(pixel[0]==255 && pixel[1]==255 && pixel[2]==255){
                    //gameObjectHandler.add(new AmmoBox(x*unit,y*unit,unit,unit) );
@@ -194,13 +195,12 @@ function loadLevel(image){
                }                
            }else{
 			   
-               //if(!wallFound){
-               //    wallX = x;
-               //    wallY = y;
-               //}
-               //wallSizeX+=unit;
-               //wallFound = true;
-			   gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
+               if(!wallFound){
+                   wallX = x;
+                   wallY = y;
+               }
+               wallSizeX+=unit;
+               wallFound = true;
                
            }
        }        
