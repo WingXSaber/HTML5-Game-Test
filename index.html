@@ -1,0 +1,40 @@
+
+<html>
+    <head>
+        <title>Top Down Shooter Port</title>
+        <meta charset="UTF-8">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <script type="text/javascript" src="Game.js"> //should this be here on the head or body? </script>        
+        <script type="text/javascript" src="GameObject.js"> </script>
+        <script type="text/javascript" src="Camera.js"> </script>
+       
+    </head>
+    
+    <body>
+        
+        <div id = "BackgroundBox"  style = "overflow:hidden; position: absolute; 
+        left: 0px; top: 0px; width: 1024px; height: 640px;  background-color: #D3D3D3; 
+        left: 0px; top: 0px;">
+            
+            <canvas id="GraphicsBox" width="1024" height="640" style="overflow:hidden;
+            position: absolute; width: 100%; height: 100%; ">
+                Your browser requires HTML5 Canvas support to play this game.
+            </canvas>
+
+            <canvas id="UIBox" width="1024" height="640" style="overflow:hidden;
+            position: absolute; width: 100%; height: 100%; ">
+                Your browser requires HTML5 Canvas support to play this game.
+            </canvas>
+            
+            <div id="MouseEventHandler" style="overflow:hidden; position: absolute; 
+            left: 0px; top: 0px; width: 100%; height: 100%;">
+            
+            </div>   
+           
+            <script>
+                intialize();
+            </script>
+        </div>
+
+    </body>  
+</html>
