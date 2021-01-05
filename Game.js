@@ -182,16 +182,12 @@ function loadLevel(image){
 		   
            if(!(pixel[0]==255 && pixel[1]==0 && pixel[2]==0)){
                if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
-                   playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );  
-				   
-               }
-			   else if(pixel[0]==0 || pixel[0]==1 && pixel[1]==255 && pixel[2]==0){				   
+                   playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );  				   
+               }else if((pixel[0]==0 || pixel[0]==1) && pixel[1]==255 && pixel[2]==0){				   
 				   //The image is RGB = 0,255,0
 				   //Chrome reads it correct
-				   //Mozilla reads it as RGB = 1,255,0
-			   
-                   gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
-				   console.log("TODD HOWARD");
+				   //Mozilla reads it as RGB = 1,255,0			   
+                   gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );				 
                //}else if(pixel[0]==255 && pixel[1]==255 && pixel[2]==255){
                    //gameObjectHandler.add(new AmmoBox(x*unit,y*unit,unit,unit) );
                }else if(wallFound){
