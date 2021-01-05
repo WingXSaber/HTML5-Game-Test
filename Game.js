@@ -185,8 +185,10 @@ function loadLevel(image){
                    playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );  
 				   
                }
-			   else if(pixel[0]==1 && pixel[1]==255 && pixel[2]==0){ //somehow this doesn't show up at mozilla. 
-			   //rather the pixel[1]==255 is always seen as false.
+			   else if(pixel[0]==0 || pixel[0]==1 && pixel[1]==255 && pixel[2]==0){				   
+				   //The image is RGB = 0,255,0
+				   //Chrome reads it correct
+				   //Mozilla reads it as RGB = 1,255,0
 			   
                    gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
 				   console.log("TODD HOWARD");
