@@ -181,13 +181,14 @@ function loadLevel(image){
            //pixel[3] -> alpha        
            if(!(pixel[0]==255 && pixel[1]==0 && pixel[2]==0)){
                if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
-                   
-gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );				   
-               }else if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){
-                   playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );     
+                   playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );                   
+               }
+			   if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){
+                   gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
                //}else if(pixel[0]==255 && pixel[1]==255 && pixel[2]==255){
                    //gameObjectHandler.add(new AmmoBox(x*unit,y*unit,unit,unit) );
-               }else if(wallFound){
+               } 
+				if(wallFound){
                    gameObjectHandler.add(new Wall(wallX*unit, wallY*unit*.75, wallSizeX, unit*.75, 56) );
                    wallFound = false;
                    wallX = 0, wallY = 0, wallSizeX = 0;
