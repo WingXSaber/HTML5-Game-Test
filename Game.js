@@ -179,7 +179,9 @@ function loadLevel(image){
            //pixel[1] -> green
            //pixel[2] -> blue
            //pixel[3] -> alpha        
-		   console.log("RGB :"+pixel[0]+" "+pixel[1]+" "+pixel[2]+" ");
+		   if(pixel[1]==255){
+			console.log("RGB :"+pixel[0]+" "+pixel[1]+" "+pixel[2]+" ");
+		   }
            if(!(pixel[0]==255 && pixel[1]==0 && pixel[2]==0)){
                if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
                    playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );  
