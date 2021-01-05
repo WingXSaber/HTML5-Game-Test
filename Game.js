@@ -28,7 +28,7 @@ var tps = "", fps = "";
 var playerIndex = 0;
 
 
-function saveBlob(blob, fileName) {
+function saveFile(blob, fileName) {
     var a = document.createElement("a");
     document.body.appendChild(a);
     a.style = "display: none";
@@ -42,9 +42,13 @@ function saveBlob(blob, fileName) {
 
 
 function intialize(){  
-	console.log("TESTING");
-	saveBlob("TEXT KO ITO", 'test.zip');
 	
+	//////////////////////
+	console.log("TESTING");	
+	var thisIsAString = "AHHHHHHH"
+	const blob = new Blob([thisIsAString], {type : 'application/json'});
+	saveFile(blob, 'test.txt');
+	//////////////////////////////
 	
     gameCanvas = document.getElementById("GraphicsBox");       
     gameUI = document.getElementById("UIBox");   
