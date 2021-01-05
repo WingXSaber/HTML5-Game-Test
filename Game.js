@@ -151,7 +151,7 @@ function hasInitialized(){
         for(var i =0; i<this.all_Images.length; i++)
             console.log(""+i+"] "+this.all_Images[i][1]);
 
-		console.log("TESTING AHHHHHHHHHHH");
+		
         loadLevel(all_Images[0][0]);
         requestAnimationFrame(gameLoop);        
     }
