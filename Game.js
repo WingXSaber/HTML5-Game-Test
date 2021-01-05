@@ -29,8 +29,7 @@ var playerIndex = 0;
 
 
 
-var textFile = null,
-  makeTextFile = function (text) {
+function  textFile (text) {
     var data = new Blob([text], {type: 'text/plain'});
 
     // If we are replacing a previously generated file we need to
@@ -45,7 +44,8 @@ var textFile = null,
     return textFile;
   };
 
-function intialize(){    
+function intialize(){  
+	textFile("gura");
     gameCanvas = document.getElementById("GraphicsBox");       
     gameUI = document.getElementById("UIBox");   
     gameMouseEventHandler = document.getElementById("MouseEventHandler");
