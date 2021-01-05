@@ -181,9 +181,12 @@ function loadLevel(image){
            //pixel[3] -> alpha        
            if(!(pixel[0]==255 && pixel[1]==0 && pixel[2]==0)){
                if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
-                   playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );                   
+                   playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );  
+				   console.log(pixel);
                }
-			   else if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){
+			   else if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){ //somehow this doesn't show up at mozilla. 
+			   //rather the pixel[1]==255 is always seen as false.
+			   
                    gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
 				   console.log("TODD HOWARD");
                //}else if(pixel[0]==255 && pixel[1]==255 && pixel[2]==255){
