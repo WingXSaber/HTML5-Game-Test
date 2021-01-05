@@ -29,24 +29,25 @@ var playerIndex = 0;
 
 
 
-function  textFile (text) {
-    var data = new Blob([text], {type: 'text/plain'});
+var saveBlob = (function () {
+    var a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style = "display: none";
+    return function (blob, fileName) {
+        var url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = fileName;
+        a.click();
+        window.URL.revokeObjectURL(url);
+    };
+}());
 
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-
-    textFile = window.URL.createObjectURL(data);
-
-    // returns a URL you can use as a href
-    return textFile;
-  };
 
 function intialize(){  
 	console.log("TESTING");
-	textFile("gura");
+	saveBlob(file, 'test.zip');
+	
+	
     gameCanvas = document.getElementById("GraphicsBox");       
     gameUI = document.getElementById("UIBox");   
     gameMouseEventHandler = document.getElementById("MouseEventHandler");
