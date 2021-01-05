@@ -45,6 +45,7 @@ function  textFile (text) {
   };
 
 function intialize(){  
+	console.log("TESTING");
 	textFile("gura");
     gameCanvas = document.getElementById("GraphicsBox");       
     gameUI = document.getElementById("UIBox");   
