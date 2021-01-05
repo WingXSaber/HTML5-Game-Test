@@ -202,6 +202,7 @@ function loadLevel(image){
            }
        }        
    }
+   console.log("GameObjectHandler Length: "+gameObjectHandler.activeLength()+gameObjectHandler.activeLength());
 }
 
 
