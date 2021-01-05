@@ -44,7 +44,7 @@ function saveFile(blob, fileName) {
 function intialize(){  
 	
 	//////////////////////
-	console.log("TESTING AHHHHHHHHHHH");	
+	console.log("TESTING TESTING");	
 	var thisIsAString = "AHHHHHHH"
 	const blob = new Blob([thisIsAString], {type : 'application/json'});
 	saveFile(blob, 'test.txt');
