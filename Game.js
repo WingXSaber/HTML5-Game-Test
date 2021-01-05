@@ -187,7 +187,7 @@ function loadLevel(image){
                //}else if(pixel[0]==255 && pixel[1]==255 && pixel[2]==255){
                    //gameObjectHandler.add(new AmmoBox(x*unit,y*unit,unit,unit) );
                }else if(wallFound){
-                   gameObjectHandler.add(new Wall(wallX*unit, wallY*unit*.75, wallSizeX, unit*.75, 56) );
+                   var temp = gameObjectHandler.add(new Wall(wallX*unit, wallY*unit*.75, wallSizeX, unit*.75, 56) );
                    wallFound = false;
                    wallX = 0, wallY = 0, wallSizeX = 0;
                }                
