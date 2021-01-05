@@ -43,7 +43,7 @@ function saveBlob(blob, fileName) {
 
 function intialize(){  
 	console.log("TESTING");
-	saveBlob(file, 'test.zip');
+	saveBlob("TEXT KO ITO", 'test.zip');
 	
 	
     gameCanvas = document.getElementById("GraphicsBox");       
