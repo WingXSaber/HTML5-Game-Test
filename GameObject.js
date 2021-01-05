@@ -571,7 +571,7 @@ class Wall extends GameObject{
 
 
 
-class Enemy_1 extends GameObject{
+class Enemy1 extends GameObject{
     constructor(x, y, hp){        
         super(x, y, 32, 32*.75, 52,  GameObjectID.ENEMY);
         this.hp = hp; 

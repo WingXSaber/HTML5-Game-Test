@@ -183,11 +183,11 @@ function loadLevel(image){
                if(pixel[0]==0 && pixel[1]==162 && pixel[2]==255){   
                    playerIndex = gameObjectHandler.add(new Player(x*unit, y*unit*.75, 100, 5000) );                   
                }else if(pixel[0]==0 && pixel[1]==255 && pixel[2]==0){
-                   gameObjectHandler.add(new Enemy_1(x*unit, y*unit*.75, 100) );
+                   gameObjectHandler.add(new Enemy1(x*unit, y*unit*.75, 100) );
                //}else if(pixel[0]==255 && pixel[1]==255 && pixel[2]==255){
                    //gameObjectHandler.add(new AmmoBox(x*unit,y*unit,unit,unit) );
                }else if(wallFound){
-                   var temp = gameObjectHandler.add(new Wall(wallX*unit, wallY*unit*.75, wallSizeX, unit*.75, 56) );
+                   gameObjectHandler.add(new Wall(wallX*unit, wallY*unit*.75, wallSizeX, unit*.75, 56) );
                    wallFound = false;
                    wallX = 0, wallY = 0, wallSizeX = 0;
                }                
