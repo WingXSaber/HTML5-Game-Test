@@ -44,10 +44,10 @@ function saveFile(blob, fileName) {
 function intialize(){  
 	
 	//////////////////////
-	console.log("TESTING TESTING TESTING");	
-	var thisIsAString = "AHHHHHHH"
-	const blob = new Blob([thisIsAString], {type : 'application/json'});
-	saveFile(blob, 'test.txt');
+	//console.log("TESTING TESTING TESTING");	
+	//var thisIsAString = "AHHHHHHH"
+	//const blob = new Blob([thisIsAString], {type : 'application/json'});
+	//saveFile(blob, 'test.txt');
 	//////////////////////////////
 	
     gameCanvas = document.getElementById("GraphicsBox");       
